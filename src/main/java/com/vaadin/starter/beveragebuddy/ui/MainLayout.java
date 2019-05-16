@@ -38,6 +38,7 @@ import com.vaadin.starter.beveragebuddy.ui.views.reviewslist.ReviewsList;
 @JsModule("frontend://styles/shared-styles.js")
 @PWA(name = "Beverage Buddy", shortName = "BevBuddy")
 @Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
+@JsModule("@vaadin/vaadin-grid/vaadin-grid-column")
 public class MainLayout extends Div
         implements RouterLayout, PageConfigurator {
 
