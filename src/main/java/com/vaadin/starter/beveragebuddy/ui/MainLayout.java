@@ -60,7 +60,7 @@ public class MainLayout extends Div
         connectCategories.add(new Icon(VaadinIcon.ARCHIVES), new Text("Connect Categories"));
         connectCategories.addClassName("main-layout__nav-item");
         connectCategories.addClickListener(e -> {
-           UI.getCurrent().getPage().executeJs("window.location.replace('/')"); 
+           UI.getCurrent().getPage().executeJs("window.location.replace('index.html')"); 
         });
 
         

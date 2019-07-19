@@ -4,9 +4,9 @@ import '@vaadin/vaadin-lumo-styles/typography.js';
 import '@vaadin/vaadin-lumo-styles/color.js';
 import '@vaadin/vaadin-lumo-styles/spacing.js';
 
-// @ts-ignore
-import { Router } from '@vaadin/router/index.js';
+import { Router } from '@vaadin/router';
 import './src/main-layout';
+
 
 const routes = [
     {
