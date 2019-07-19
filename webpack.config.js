@@ -6,7 +6,15 @@ const merge = require('webpack-merge');
 const flowDefaults = require('./webpack.generated.js');
 
 module.exports = merge(flowDefaults, {
-
+    resolve: {
+        extensions: ['.ts', '.js']
+    },
+    module: {
+        rules: [{
+            test: /\.ts$/,
+            loader: 'awesome-typescript-loader'
+        }]
+    }
 });
 
 /**
