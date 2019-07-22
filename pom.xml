@@ -115,11 +115,6 @@
             <artifactId>vaadin-connect</artifactId>
             <version>${vaadin.connect.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-frontend-server</artifactId>
-            <version>${vaadin.connect.version}</version>
-        </dependency>
         <!-- SPRING -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
