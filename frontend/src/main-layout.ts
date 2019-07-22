@@ -90,9 +90,9 @@ export class MainLayout extends LitElement {
           <div class="header">
             <h2 class="title">Beverage Buddy</h2>
             <div class="nav">
-              <a class="nav-item" router-link href="." highlight><iron-icon icon="vaadin:list"></iron-icon>Reviews</a>
+              <a class="nav-item" router-link href="index.html" highlight><iron-icon icon="vaadin:list"></iron-icon>Reviews Exported</a>
               <a class="nav-item" router-link href="categories"><iron-icon icon="vaadin:archives"></iron-icon>Categories</a>
-              <a class="nav-item" router-link href="client-categories"><iron-icon icon="vaadin:archives"></iron-icon>Client Categories</a>
+              <a class="nav-item" router-link href="client-categories"><iron-icon icon="vaadin:archives"></iron-icon>Categories Connect</a>
             </div>
           </div>
           

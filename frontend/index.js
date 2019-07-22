@@ -46,8 +46,15 @@ const routes = [
                 title: 'Review List',
                 component: 'flow-review-list',
                 action: async () => {
+                    console.log(this);
                     await import('../target/frontend/generated-flow-imports');
-                    loadFlowWC('flow-review-list')
+                    loadFlowWC('flow-review-list');
+                    window.t = this;
+                    // const wc = window.location.pathname.replace(router.baseUrl, '');
+                    // if (/^[a-z]\w*-[\w\-]+$/.test(wc)) {
+                    //     await import('../target/frontend/generated-flow-imports');
+                    //     loadFlowWC(wc)
+                    // }
                 }                
             }
         ]
@@ -56,4 +63,5 @@ const routes = [
 
 const router = new Router(document.querySelector('#outlet'));
 router.setRoutes(routes);
+
 window.router  = router;
