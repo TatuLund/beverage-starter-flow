@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <vaadin.version>14.0.0.rc5</vaadin.version>
+        <vaadin.version>14.0-SNAPSHOT</vaadin.version>
         <flow.version>2.0-SNAPSHOT</flow.version>
         <vaadin.connect.version>0.9.4</vaadin.connect.version>
     </properties>
@@ -157,8 +157,8 @@
             <!-- FLOW NPM -->
             <plugin>
                 <groupId>com.vaadin</groupId>
-                <artifactId>vaadin-maven-plugin</artifactId>
-                <version>${vaadin.version}</version>
+                <artifactId>flow-maven-plugin</artifactId>
+                <version>${flow.version}</version>
                 <executions>
                     <execution>
                         <goals>
