@@ -20,6 +20,7 @@ import java.util.List;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.KeyModifier;
 import com.vaadin.flow.component.Tag;
+import com.vaadin.flow.component.WebComponentExporter;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.H2;
@@ -31,6 +32,7 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.polymertemplate.ModelItem;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.webcomponent.WebComponent;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -50,11 +52,22 @@ import com.vaadin.starter.beveragebuddy.ui.views.reviewslist.ReviewsList.Reviews
  *
  * Implemented using a simple template.
  */
-@Route(value = "", layout = MainLayout.class)
+@Route(value = "reviews", layout = MainLayout.class)
 @PageTitle("Review List")
 @Tag("reviews-list")
 @JsModule("./src/views/reviewslist/reviews-list.js")
 public class ReviewsList extends PolymerTemplate<ReviewsModel> {
+    
+    
+    public static class MyExporter extends WebComponentExporter<ReviewsList> {
+        public MyExporter() {
+            super("flow-review-list");
+        }
+
+        @Override
+        protected void configureInstance(WebComponent<ReviewsList> arg0, ReviewsList arg1) {
+        }
+    }
 
     public interface ReviewsModel extends TemplateModel {
         @Encode(value = LongToStringEncoder.class, path = "id")
