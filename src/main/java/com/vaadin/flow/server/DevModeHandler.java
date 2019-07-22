@@ -300,11 +300,7 @@ public final class DevModeHandler implements Serializable {
      * @return true if the request should be forwarded to webpack
      */
     public boolean isDevModeRequest(HttpServletRequest request) {
-        boolean ret;
-        if (routes.contains(request.getPathInfo())) {
-            ret = false;
-        }
-        ret = true;
+        boolean ret = !routes.contains(request.getPathInfo());
         System.err.println(">>> " + ret + " " + request.getPathInfo() + " " + routes);
         return ret;
 //        return request.getPathInfo() != null

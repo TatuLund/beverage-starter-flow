@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.KeyModifier;
+import com.vaadin.flow.component.WebComponentExporter;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.grid.Grid;
@@ -30,6 +31,7 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.Notification.Position;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.webcomponent.WebComponent;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
@@ -48,6 +50,19 @@ import com.vaadin.starter.beveragebuddy.ui.common.AbstractEditorDialog;
 @Route(value = "categories", layout = MainLayout.class)
 @PageTitle("Categories List")
 public class CategoriesList extends VerticalLayout {
+    
+    
+    public static class MyExporter extends WebComponentExporter<CategoriesList> {
+        public MyExporter() {
+            super("flow-category-list");
+        }
+
+        @Override
+        protected void configureInstance(WebComponent<CategoriesList> webComponent, CategoriesList component) {
+            // TODO Auto-generated method stub
+        }
+
+    }
 
     private final TextField searchField = new TextField("",
             "Search categories");
