@@ -5,29 +5,13 @@
 const merge = require('webpack-merge');
 const flowDefaults = require('./webpack.generated.js');
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
 
 module.exports = merge(flowDefaults, {
     entry: {
-        bundle: path.resolve(__dirname, 'frontend/index')
-    },
-    resolve: {
-        extensions: ['.ts', '.js']
-    },
-    module: {
-        rules: [{
-            test: /\.ts$/,
-            loader: 'awesome-typescript-loader'
-        }]
+        bundle: require('path').resolve(__dirname, 'frontend/index')
     },
     plugins: [
-        new CopyWebpackPlugin([{
-            from: '**/*',
-            context: path.resolve('static'),
-            to: 'build/'
-        }]),
         new HtmlWebpackPlugin({
             template: 'index.html',
             excludeChunks: ['polyfills']
