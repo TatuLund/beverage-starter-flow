@@ -18,6 +18,8 @@ import '@vaadin/vaadin-lumo-styles/spacing.js';
 import { Router } from '@vaadin/router';
 import './src/main-layout';
 
+import client from './generated/connect-client.default';
+
 
 function loadFlowWC(tag) {
     const s = document.createElement('script');
@@ -41,27 +43,67 @@ const routes = [
                 }
             },
             {
-                // fallback to Flow if no client-side routes match
-                path: '(.*)',
-                title: 'Review List',
+                path: '/client-reviews',
+                title: 'Client Reviews',
+                component: 'client-reviews',
+                action: async () => {
+                    await import('./client-reviews');
+                }
+            },
+            {
+                path: '/flow-categories',
+                title: 'Server Categories',
+                component: 'flow-category-list',
+                action: async () => {
+                    await import('../target/frontend/generated-flow-imports');
+                    loadFlowWC('flow-category-list');
+                }
+            },
+            {
+                path: '/flow-reviews',
+                title: 'Server Categories',
                 component: 'flow-review-list',
                 action: async () => {
-                    console.log(this);
                     await import('../target/frontend/generated-flow-imports');
                     loadFlowWC('flow-review-list');
-                    window.t = this;
-                    // const wc = window.location.pathname.replace(router.baseUrl, '');
-                    // if (/^[a-z]\w*-[\w\-]+$/.test(wc)) {
-                    //     await import('../target/frontend/generated-flow-imports');
-                    //     loadFlowWC(wc)
-                    // }
-                }                
-            }
+                }
+            },
+            // {
+            //     // fallback to Flow if no client-side routes match
+            //     path: '(.*)',
+            //     title: 'Review List',
+            //     component: 'flow-review-list',
+            //     action: async () => {
+            //         console.log(this);
+            //         await import('../target/frontend/generated-flow-imports');
+            //         loadFlowWC('flow-review-list');
+            //         window.t = this;
+            //         // const wc = window.location.pathname.replace(router.baseUrl, '');
+            //         // if (/^[a-z]\w*-[\w\-]+$/.test(wc)) {
+            //         //     await import('../target/frontend/generated-flow-imports');
+            //         //     loadFlowWC(wc)
+            //         // }
+            //     }
+            // }
         ]
     }
 ];
 
+
+
 const router = new Router(document.querySelector('#outlet'));
 router.setRoutes(routes);
 
-window.router  = router;
+/// Disable interactive login right now
+client.credentials = function() {
+    return new Promise((resolve, reject) => {
+        resolve({
+            username: 'user',
+            password: 'user',
+            stayLoggedIn: true
+        })
+    })
+}
+
+
+

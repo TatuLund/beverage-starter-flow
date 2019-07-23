@@ -14,7 +14,7 @@ export class MainLayout extends LitElement {
           max-width: 960px;
           margin: 0 auto;
         }
-    
+
         .title {
           font-size: 1em;
           margin: 0;
@@ -24,28 +24,28 @@ export class MainLayout extends LitElement {
           letter-spacing: -0.02em;
           font-weight: 500;
         }
-    
+
         .header {
           display: flex;
           flex: none;
           align-items: center;
           height: var(--main-layout-header-height);
-    
+
           /* Stretch to fill the entire browser viewport, while keeping the content constrained to
              parent element max-width */
           margin: 0 calc(-50vw + 50%);
           padding: 0 calc(50vw - 50% + 16px);
-    
+
           background-color: var(--lumo-base-color);
           box-shadow: 0 1px 0 0 var(--lumo-contrast-5pct);
         }
-    
+
         .nav {
           display: flex;
           flex: 1;
           justify-content: center;
         }
-    
+
         .nav-item {
           display: inline-flex;
           flex-direction: column;
@@ -63,20 +63,20 @@ export class MainLayout extends LitElement {
           font-weight: 500;
           line-height: 1.3;
         }
-    
+
         .nav-item:hover {
           text-decoration: none;
         }
-    
+
         .nav-item:not([highlight]):hover {
           color: inherit;
         }
-    
+
         .nav-item[highlight] {
           color: var(--lumo-primary-text-color);
           cursor: default;
         }
-    
+
         .nav-item iron-icon {
           /* Vaadin icons are using a 16x16 grid */
           padding: 4px;
@@ -90,12 +90,13 @@ export class MainLayout extends LitElement {
           <div class="header">
             <h2 class="title">Beverage Buddy</h2>
             <div class="nav">
-              <a class="nav-item" router-link href="index.html" highlight><iron-icon icon="vaadin:list"></iron-icon>Reviews Exported</a>
-              <a class="nav-item" router-link href="categories"><iron-icon icon="vaadin:archives"></iron-icon>Categories</a>
-              <a class="nav-item" router-link href="client-categories"><iron-icon icon="vaadin:archives"></iron-icon>Categories Connect</a>
+              <!-- do not set route-link attribute, used by flow -->
+              <a class="nav-item" href="flow-reviews"><iron-icon icon="vaadin:list"></iron-icon>Reviews Exported</a>
+              <a class="nav-item" href="flow-categories"><iron-icon icon="vaadin:archives"></iron-icon>Categories Exported</a>
+              <a class="nav-item" href="client-reviews"><iron-icon icon="vaadin:list"></iron-icon>Reviews Connect</a>
+              <a class="nav-item" href="client-categories"><iron-icon icon="vaadin:archives"></iron-icon>Categories Connect</a>
             </div>
           </div>
-          
           <slot></slot>
         `;
     }
