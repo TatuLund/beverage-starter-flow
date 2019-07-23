@@ -15,7 +15,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <vaadin.version>14.0-SNAPSHOT</vaadin.version>
-        <flow.version>2.0-SNAPSHOT</flow.version>
+        <flow.version>3.0-SNAPSHOT</flow.version>
         <vaadin.connect.version>0.9.4</vaadin.connect.version>
     </properties>
 
@@ -108,6 +108,21 @@
                     <artifactId>*</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>flow-server</artifactId>
+            <version>${flow.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>flow-client</artifactId>
+            <version>${flow.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>flow-html-components</artifactId>
+            <version>${flow.version}</version>
         </dependency>
         <!-- CONNECT -->
         <dependency>
