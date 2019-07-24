@@ -8,13 +8,13 @@ import '@vaadin/vaadin-checkbox/theme/lumo/vaadin-checkbox.js';
 import '@vaadin/vaadin-text-field/theme/lumo/vaadin-text-field.js';
 import '@vaadin/vaadin-grid/theme/lumo/vaadin-grid.js';
 
-import client from './generated/connect-client.default';
+import client from '../generated/connect-client.default';
 
 const div = document.createElement('div');
 div.innerHTML = '<custom-style><style include="lumo-color lumo-typography"></style></custom-style>';
 document.head.insertBefore(div.firstElementChild, document.head.firstChild);
 
-import * as connectServices from './generated/ConnectServices';
+import * as connectServices from '../generated/ConnectServices';
 
 class ClientReviews extends PolymerElement {
   static get template() {

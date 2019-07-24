@@ -28,7 +28,7 @@ const routes = [
                 title: 'Client Categories',
                 component: 'client-categories',
                 action: async () => {
-                    await import('./client-categories');
+                    await import('./src/client-categories');
                 }
             },
             {
@@ -36,7 +36,7 @@ const routes = [
                 title: 'Client Reviews',
                 component: 'client-reviews',
                 action: async () => {
-                    await import('./client-reviews');
+                    await import('./src/client-reviews');
                 }
             },
             {
