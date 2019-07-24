@@ -44,10 +44,11 @@ class ClientReviews extends PolymerElement {
 
     <h3>Reviews</h3>
     <vaadin-grid id="grid">
-      <vaadin-grid-column path="name" header="Name"></vaadin-grid-column>
-      <vaadin-grid-column path="score" header="Score"></vaadin-grid-column>
-      <vaadin-grid-column path="count" header="Count"></vaadin-grid-column>
-      <vaadin-grid-column path="category.name" header="Category.Name"></vaadin-grid-column>
+      <vaadin-grid-column path="name" header="Beverate"></vaadin-grid-column>
+      <vaadin-grid-column path="category.name" header="Category Name"></vaadin-grid-column>
+      <vaadin-grid-column path="score" header="Ratting"></vaadin-grid-column>
+      <vaadin-grid-column path="count" header="Times Tasted"></vaadin-grid-column>
+      <vaadin-grid-column path="date" header="Last Time Tasted"></vaadin-grid-column>
     </vaadin-grid>
 `;
   }

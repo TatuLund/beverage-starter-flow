@@ -39,6 +39,7 @@ $_documentContainer.innerHTML = `<dom-module id="view-styles">
             /* Avoid horizontal scrollbars, mainly on IE11 */
             overflow-x: hidden;
             background-color: var(--lumo-contrast-5pct);
+            margin: 0;
         }
 
         .main-layout {
