@@ -1,8 +1,3 @@
-
-const div = document.createElement('div');
-div.innerHTML = '<custom-style><style include="lumo-color lumo-typography"></style></custom-style>';
-document.head.insertBefore(div.firstElementChild, document.head.firstChild);
-
 import '@vaadin/vaadin-lumo-styles/icons.js';
 import '@vaadin/vaadin-lumo-styles/spacing.js';
 import '@vaadin/vaadin-lumo-styles/typography.js';
@@ -10,23 +5,17 @@ import '@vaadin/vaadin-lumo-styles/style.js';
 import '@vaadin/vaadin-lumo-styles/color.js';
 import './styles/shared-styles.js';
 
-import '@vaadin/vaadin-lumo-styles/typography.js';
-import '@vaadin/vaadin-lumo-styles/color.js';
-import '@vaadin/vaadin-lumo-styles/spacing.js';
-
-
 import { Router } from '@vaadin/router';
 import './src/main-layout';
 
 import client from './generated/connect-client.default';
 
-
 function loadFlowWC(tag) {
-    const s = document.createElement('script');
-    s.id = tag;
-    s.type = 'module';
-    s.src = `web-component/${tag}.js`;
-    document.head.appendChild(s);
+    const script = document.createElement('script');
+    script.id = tag;
+    script.type = 'module';
+    script.src = `web-component/${tag}.js`;
+    document.head.appendChild(script);
 }
 
 const routes = [

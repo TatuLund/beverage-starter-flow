@@ -29,20 +29,9 @@
         <style include="lumo-color lumo-typography"></style>
     </custom-style>
 
-
     <script>
       window.Vaadin = window.Vaadin || {};
       window.Vaadin.Flow = window.Vaadin.Flow || {};
-
-      customElements._define = customElements.define;
-      customElements.define = function(a, b) {
-        try {
-          customElements._define(a, b);
-        } catch (error) {
-        }
-      }
-
-
     </script>
 </head>
 <body>
