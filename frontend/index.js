@@ -10,6 +10,8 @@ import './src/main-layout';
 
 import client from './generated/connect-client.default';
 
+import '@vaadin/flow';
+
 function loadFlowWC(tag) {
     const script = document.createElement('script');
     script.id = tag;
@@ -28,7 +30,7 @@ const routes = [
                 title: 'Client Categories',
                 component: 'client-categories',
                 action: async () => {
-                    await import('./client-categories');
+                    await import('./src/client-categories');
                 }
             },
             {
@@ -36,7 +38,7 @@ const routes = [
                 title: 'Client Reviews',
                 component: 'client-reviews',
                 action: async () => {
-                    await import('./client-reviews');
+                    await import('./src/client-reviews');
                 }
             },
             {
