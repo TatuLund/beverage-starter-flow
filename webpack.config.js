@@ -5,18 +5,10 @@
 const merge = require('webpack-merge');
 const flowDefaults = require('./webpack.generated.js');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = merge(flowDefaults, {
     entry: {
         bundle: require('path').resolve(__dirname, 'frontend/index')
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: 'index.html',
-            excludeChunks: ['polyfills']
-        })
-    ]
+    }
 });
 
 /**
