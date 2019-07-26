@@ -14,7 +14,12 @@ export class MainLayout extends LitElement {
           max-width: 960px;
           margin: 0 auto;
         }
-
+        :host ::slotted(*) {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          margin: 0 20px 20px;
+        }
         .title {
           font-size: 1em;
           margin: 0;
@@ -83,6 +88,7 @@ export class MainLayout extends LitElement {
           box-sizing: border-box;
           pointer-events: none;
         }
+
     `;
 
     render() {
