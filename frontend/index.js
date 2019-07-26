@@ -9,6 +9,7 @@ import { Router } from '@vaadin/router';
 import './src/main-layout';
 
 import client from './generated/connect-client.default';
+import flow from '@vaadin/flow'
 
 function loadFlowWC(tag) {
     const script = document.createElement('script');
@@ -44,8 +45,8 @@ const routes = [
                 title: 'Server Categories',
                 component: 'flow-category-list',
                 action: async () => {
+                    await flow.loadGwt();
                     await import('../target/frontend/generated-flow-imports');
-                    loadFlowWC('flow-category-list');
                 }
             },
             {
@@ -53,8 +54,8 @@ const routes = [
                 title: 'Server Categories',
                 component: 'flow-review-list',
                 action: async () => {
+                    await flow.loadGwt();
                     await import('../target/frontend/generated-flow-imports');
-                    loadFlowWC('flow-review-list');
                 }
             },
             // {
@@ -93,6 +94,5 @@ client.credentials = function() {
         })
     })
 }
-
 
 
