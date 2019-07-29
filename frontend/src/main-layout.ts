@@ -97,8 +97,8 @@ export class MainLayout extends LitElement {
             <h2 class="title">Beverage Buddy</h2>
             <div class="nav">
               <!-- do not set route-link attribute, used by flow -->
-              <a class="nav-item" href="flow-reviews"><iron-icon icon="vaadin:list"></iron-icon>Reviews Exported</a>
-              <a class="nav-item" href="flow-categories"><iron-icon icon="vaadin:archives"></iron-icon>Categories Exported</a>
+              <a class="nav-item" href="flow-review-list"><iron-icon icon="vaadin:list"></iron-icon>Reviews Exported</a>
+              <a class="nav-item" href="flow-category-list"><iron-icon icon="vaadin:archives"></iron-icon>Categories Exported</a>
               <a class="nav-item" href="client-reviews"><iron-icon icon="vaadin:list"></iron-icon>Reviews Connect</a>
               <a class="nav-item" href="client-categories"><iron-icon icon="vaadin:archives"></iron-icon>Categories Connect</a>
             </div>

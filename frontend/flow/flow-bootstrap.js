@@ -1,7 +1,6 @@
 
 
 window.Vaadin.Flow.bootstrap = function(init) {
-    console.log("BOOT .... ");
     var apps = {};
     var widgetsets = {};
     var log;

@@ -2,7 +2,7 @@
   "name": "@vaadin/flow",
   "version": "1.0.0",
   "license": "UNLICENSED",
-  "main": "flow.js",
+  "main": "flow",
   "dependencies": {
   }
 }

@@ -9,15 +9,11 @@ import { Router } from '@vaadin/router';
 import './src/main-layout';
 
 import client from './generated/connect-client.default';
-import flow from '@vaadin/flow'
+import { Flow } from '@vaadin/flow';
 
-function loadFlowWC(tag) {
-    const script = document.createElement('script');
-    script.id = tag;
-    script.type = 'module';
-    script.src = `web-component/${tag}.js`;
-    document.head.appendChild(script);
-}
+const flow = new Flow({
+    imports: () => import('../target/frontend/generated-flow-imports')
+});
 
 const routes = [
     {
@@ -41,40 +37,23 @@ const routes = [
                 }
             },
             {
-                path: '/flow-categories',
+                path: '/flow-category-list',
                 title: 'Server Categories',
                 component: 'flow-category-list',
-                action: async () => {
-                    await flow.loadGwt();
-                    await import('../target/frontend/generated-flow-imports');
-                }
+                action: () => flow.load()
             },
             {
-                path: '/flow-reviews',
+                path: '/flow-review-list',
                 title: 'Server Categories',
                 component: 'flow-review-list',
-                action: async () => {
-                    await flow.loadGwt();
-                    await import('../target/frontend/generated-flow-imports');
-                }
+                action: () => flow.load()
             },
-            // {
-            //     // fallback to Flow if no client-side routes match
-            //     path: '(.*)',
-            //     title: 'Review List',
-            //     component: 'flow-review-list',
-            //     action: async () => {
-            //         console.log(this);
-            //         await import('../target/frontend/generated-flow-imports');
-            //         loadFlowWC('flow-review-list');
-            //         window.t = this;
-            //         // const wc = window.location.pathname.replace(router.baseUrl, '');
-            //         // if (/^[a-z]\w*-[\w\-]+$/.test(wc)) {
-            //         //     await import('../target/frontend/generated-flow-imports');
-            //         //     loadFlowWC(wc)
-            //         // }
-            //     }
-            // }
+            // FIXME, does not work 
+            {
+                // fallback to Flow if no client-side routes match
+                path: '(.*)',
+                action: (context, commands) => flow.navigate(context, commands)
+            }
         ]
     }
 ];
